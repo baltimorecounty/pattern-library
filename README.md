@@ -1,3 +1,5 @@
+A small demo of Pattern Lab Node for Baltimore County Components.
+
 # Pattern Lab Node - Gulp Edition
 
 The Gulp wrapper around [Pattern Lab Node Core](https://github.com/pattern-lab/patternlab-node) providing tasks to interact with the core library and move supporting frontend assets.
