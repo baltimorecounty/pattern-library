@@ -5,7 +5,7 @@
   "dependencies": {
     "browser-sync": "^2.0.0",
     "chalk": "^1.1.3",
-    "gulp": "gulpjs/gulp#4.0",
+    "gulp": "file:../node_modules/gulp#4.0/bin",
     "minimist": "^1.2.0",
     "patternlab-node": "^2.0.0",
     "styleguidekit-assets-default": "^3.0.0",
@@ -32,5 +32,12 @@
   "license": "MIT",
   "engines": {
     "node": ">=5.0"
+  },
+  "devDependencies": {
+    "gulp": "file:gulp%234.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0",
+    "sass": "^1.0.0-beta.1"
   }
 }

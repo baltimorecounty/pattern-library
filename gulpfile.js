@@ -7,7 +7,10 @@ var gulp = require('gulp'),
   path = require('path'),
   browserSync = require('browser-sync').create(),
   argv = require('minimist')(process.argv.slice(2)),
-  chalk = require('chalk');
+  chalk = require('chalk'),
+  sass = require('gulp-sass'),
+  concat = require('gulp-concat'),
+  clean = require('gulp-clean');
 
 /**
  * Normalize all paths to be plain, paths with no leading './',
@@ -58,7 +61,27 @@ gulp.task('pl-copy:font', function () {
 
 // CSS Copy
 gulp.task('pl-copy:css', function () {
-  return gulp.src(normalizePath(paths().source.css) + '/*.css')
+  return gulp.src(normalizePath(paths().source.css) + '/pattern*.css')
+    .pipe(gulp.dest(normalizePath(paths().public.css)))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('pl-clean:sass', function () {
+  return gulp.src(normalizePath(paths().source.css) + '/styles.css')
+    .pipe(clean());
+});
+
+gulp.task('pl-build:sass', function () {
+  return gulp.src('./source/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(concat('styles.css'))
+    .pipe(gulp.dest(normalizePath(paths().source.css)))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('pl-copy:sass', function () {
+  return gulp.src(normalizePath(paths().source.css) + '/styles.css')
+    .pipe(concat('bc-style.css'))
     .pipe(gulp.dest(normalizePath(paths().public.css)))
     .pipe(browserSync.stream());
 });
@@ -120,6 +143,9 @@ gulp.task('pl-assets', gulp.series(
   'pl-copy:favicon',
   'pl-copy:font',
   'pl-copy:css',
+  'pl-clean:sass',
+  'pl-build:sass',
+  'pl-copy:sass',
   'pl-copy:styleguide',
   'pl-copy:styleguide-css'
 ));

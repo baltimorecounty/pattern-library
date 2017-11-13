@@ -1,0 +1,1 @@
+We remove the default ```outline``` styles on some form controls and apply a ```box-shadow``` in its place for ```:focus```.

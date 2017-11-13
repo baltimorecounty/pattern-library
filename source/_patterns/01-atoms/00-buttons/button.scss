@@ -1,0 +1,61 @@
+@import './source/_patterns/00-base/05-colors/_color-vars.scss';
+.button {
+  background: color('gray', '');
+  border: none;
+  border-radius: 0;
+  color: color('black', '');
+  cursor: pointer;
+  padding: 10px;
+  text-decoration: none;
+  transition: background 1s ease;
+
+  &:hover {
+    background: color('gray', 'dark');
+  }
+
+  &[disabled=disabled] {
+    background: color('gray', 'lighter');
+    color: color('black', 'lighter');
+    cursor: not-allowed;
+  }
+}
+.button-primary {
+  background: color('gold', '');
+  
+  &:hover {
+    background: color('gold', 'light');
+  }
+  &[disabled=disabled] {
+    background: color('gold', 'lightest');
+  }
+}
+
+.button-secondary {
+  background: color('red', '');
+  color: white;
+  
+  &:hover {
+    background: color('red', 'dark');
+  }
+
+  &[disabled=disabled] {
+    background: color('red', 'lighter');
+    color: white;
+  }
+}
+
+.button-link {
+  background: none;
+  color: color('navy', '');
+
+  &:hover {
+    background: none;
+    color: color('navy', 'light');
+    text-decoration: underline;
+  }
+
+  &[disabled=disabled] {
+    background: none;
+    color: color('navy', 'lighter');
+  }
+}

@@ -1,0 +1,23 @@
+<h2>Note</h2>
+<p>{{meta}}</p>
+{{#colors}}
+    <h2>{{desc}}</h2>
+    <section class="color-section">
+        <div class="color-block">
+            <div class="color {{desc}}">
+                &nbsp;
+            </div>
+            <p>{{desc}}</p>
+            <pre>color('{{desc}}', '')</pre>
+        </div>
+        {{#shades}}
+            <div class="color-block ">
+                <div class="color {{desc}}-{{.}}">
+                    &nbsp;
+                </div>
+                <p>{{.}} {{desc}}</p>
+                <pre>color('{{desc}}', '{{.}}')</pre>
+            </div>
+        {{/shades}}
+    </section>
+{{/colors}}

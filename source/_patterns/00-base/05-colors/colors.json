@@ -1,0 +1,29 @@
+{
+    "shades": ["lightest", "lighter", "light", "dark", "darker", "darkest"],
+    "colors": [{
+        "desc": "red",
+        "val": "#C51110",
+        "exclusions": []
+    },
+    {
+        "desc": "gold",
+        "val": "#FEB30C",
+        "exclusions": []
+    },
+    {
+        "desc": "gray",
+        "val": "#FEB30C",
+        "exclusions": []
+    },
+    {
+        "desc": "black",
+        "val": "#FEB30C",
+        "exclusions": []
+    },
+    {
+        "desc": "navy",
+        "val": "#FEB30C",
+        "exclusions": ["darkest"]
+    }],
+    "meta": "When using colors be sure to consult with a designer."
+}

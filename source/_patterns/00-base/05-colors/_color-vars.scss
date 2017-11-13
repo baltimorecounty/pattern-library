@@ -1,0 +1,44 @@
+$colors: (
+    "red": #C51110,
+    "gray": #EBEBEB,
+    "gold": #FEB30C,
+    "black": #333,
+    "navy": #002280
+);
+
+$shades: (
+    "darkest": 75,
+    "darker": 50,
+    "dark": 25,
+    "lightest": 75,
+    "lighter": 50,
+    "light": 25,
+);
+
+@function getMixColor($shade) {
+    @if $shade == "darkest" {
+        @return black;
+    }
+    @if $shade == "darker" {
+        @return black;
+    }
+    @if $shade == "dark" {
+        @return black;
+    }
+    @return white;
+}
+
+@function color($key, $shade) {
+    @if not map-has-key($colors, $key) {
+        @warn "Key `#{$key}` not found.";
+    }
+
+    $color: map-get($colors, $key);
+    $shadePercentage: map-get($shades, $shade); 
+    $mixColor: getMixColor($shade);
+  
+  @if $shadePercentage {
+    @return mix($mixColor, $color, $shadePercentage);
+  }
+  @return $color;
+}

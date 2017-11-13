@@ -1,0 +1,1 @@
+Note that many native select menus—namely in Safari and Chrome—have rounded corners that cannot be modified via border-radius properties.

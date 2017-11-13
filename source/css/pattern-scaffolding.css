@@ -3,11 +3,32 @@
  * styles for grids, animations, color swatches, etc.
  * These styles will not be your production CSS.
  */
+ body, html {
+   background: #e0e0e0;
+ }
 #sg-patterns {
   -webkit-box-sizing: border-box !important;
           box-sizing: border-box !important;
   max-width: 100%;
   padding: 0 0.5em;
+}
+
+#sg-patterns a.patternLink {
+  color: #333;
+  position: relative;
+  padding-left: 30px;
+}
+
+#sg-patterns a.patternLink:hover {
+  color: gold;
+  text-decoration: underline;
+}
+
+#sg-patterns a.patternLink:before {
+  content: '\f0c1';
+  font-family: FontAwesome;
+  position: absolute;
+  left: 0;
 }
 
 .demo-animate {
@@ -51,4 +72,223 @@
 .sg-label {
   font-size: 90%;
   line-height: 1;
+}
+
+.color-section {
+  display: flex;
+  
+}
+
+.color-block {
+  border: 1px solid lightgray;
+  margin: 10px;
+  padding: 10px;
+
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.color {
+  height: 50px;
+  width: 100%;
+}
+
+.red {
+  background: #C51110;
+}
+
+.red-dark {
+  background: #940d0c;
+}
+
+.red-darker {
+  background: #630908;
+}
+
+.red-darkest {
+  background: #310404;
+}
+
+.red-light {
+  background: #d44d4c;
+}
+
+.red-lighter {
+  background: #e28888;
+}
+
+.red-lightest {
+  background: #f1c4c3;
+}
+
+.gold {
+  background: #FEB30C;
+}
+
+.gold-dark {
+  background: #bf8609;
+}
+
+.gold-darker {
+  background: #7f5a06;
+}
+
+.gold-darkest {
+  background: #402d03;
+}
+
+.gold-light {
+  background: #fec649;
+}
+
+.gold-lighter {
+  background: #ffd986;
+}
+
+.gold-lightest {
+  background: #ffecc2;
+}
+
+.gray {
+  background: #EBEBEB;
+}
+
+.gray-dark {
+  background: #b0b0b0;
+}
+
+.gray-darker {
+  background: #767676;
+}
+
+.gray-darkest {
+  background: #3b3b3b;
+}
+
+.gray-light {
+  background: #f0f0f0;
+}
+
+.gray-lighter {
+  background: whitesmoke;
+}
+
+.gray-lightest {
+  background: #fafafa;
+}
+
+.black {
+  background: #333;
+}
+
+.black-dark {
+  background: #262626;
+}
+
+.black-darker {
+  background: #1a1a1a;
+}
+
+.black-darkest {
+  background: #0d0d0d;
+}
+
+.black-light {
+  background: #666666;
+}
+
+.black-lighter {
+  background: #999999;
+}
+
+.black-lightest {
+  background: #cccccc;
+}
+
+.navy {
+  background: #002280;
+}
+
+.navy-dark {
+  background: #001a60;
+}
+
+.navy-darker {
+  background: #001140;
+}
+
+.navy-darkest {
+  background: #000920;
+}
+
+.navy-light {
+  background: #4059a0;
+}
+
+.navy-lighter {
+  background: #8091c0;
+}
+
+.navy-lightest {
+  background: #bfc8df;
+}
+.sg-pattern-category-title {
+  font-size: 22px !important;
+  font-family: Arial, sans-serif;
+  border: none;
+  border-bottom: 1px solid #999;
+  margin-bottom: 15px !important;
+}
+.sg-pattern-category-title a {
+  text-transform: uppercase;
+}
+.sg-pattern-example h2 {
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  border: none;
+}
+.sg-pattern-title {
+  font-size: 18px !important;
+  margin-bottom: 10px !important;
+}
+
+.sg-pattern {
+    /* Add shadows to create the "card" effect */
+    background: white;
+    padding: 15px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.sg-pattern:hover {
+    // box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.sg-pattern-title {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.sg-pattern, 
+.panel {
+  margin-bottom: 15px;
+}
+
+.demo [class^=col-] {
+  background: lightgray;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.demo [class^=col-] {
+  border-right: 3px solid gray;
+}
+.demo .row [class^=col-]:last-child {
+  border-right: none !important;
+}
+@media screen and (max-width: 768px) {
+  .demo [class^=col-]:first-child {
+    border-right: none;
+  }
 }

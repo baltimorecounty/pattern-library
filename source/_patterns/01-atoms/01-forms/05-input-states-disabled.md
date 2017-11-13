@@ -1,0 +1,1 @@
+Add the ```disabled``` boolean attribute on an input to prevent user interactions. Disabled inputs appear lighter and add a ```not-allowed``` cursor.
